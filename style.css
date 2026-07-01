@@ -1,0 +1,1460 @@
+/* ==========================================================================
+   Mosque Website Stylesheet - Masjid Al-Noor
+   ========================================================================== */
+
+/* Design Tokens & Variables */
+:root {
+  /* Color Palette (Dark Mode Default) */
+  --primary-color: #0b3d2c;      /* Deep Emerald Green */
+  --primary-light: #165b45;      /* Light Emerald */
+  --primary-dark: #062319;       /* Darkest Forest Green */
+  --gold-color: #d4af37;         /* Antique Gold Accent */
+  --gold-hover: #b89528;         /* Gold Accent Hover */
+  
+  --bg-base: #0c1512;            /* Very dark green-tinted background */
+  --bg-surface: rgba(18, 33, 28, 0.7); /* Semitransparent card base */
+  --bg-surface-hover: rgba(26, 46, 39, 0.9);
+  
+  --text-primary: #f0f7f4;       /* Minty-white text */
+  --text-secondary: #a9bfb7;     /* Muted sage text */
+  --border-color: rgba(212, 175, 55, 0.2); /* Soft Gold Border */
+  --border-focus: rgba(212, 175, 55, 0.6);
+  
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  --transition-speed: 0.3s;
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  
+  --announcement-bg: #d4af37;
+  --announcement-text: #062319;
+}
+
+/* Light Mode Theme Overrides */
+body.light-theme {
+  --primary-color: #125e46;
+  --primary-light: #1f8b6a;
+  --primary-dark: #0a3d2c;
+  --gold-color: #c5a039;
+  --gold-hover: #a38228;
+  
+  --bg-base: #f9faf8;
+  --bg-surface: rgba(255, 255, 255, 0.85);
+  --bg-surface-hover: rgba(255, 255, 255, 0.98);
+  
+  --text-primary: #1f2d29;
+  --text-secondary: #5a6e69;
+  --border-color: rgba(18, 94, 70, 0.15);
+  --border-focus: rgba(18, 94, 70, 0.5);
+  
+  --glass-shadow: 0 8px 24px 0 rgba(18, 94, 70, 0.08);
+  
+  --announcement-bg: #125e46;
+  --announcement-text: #f0f7f4;
+}
+
+/* CSS Reset & General Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all var(--transition-speed) ease;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gold-text {
+  color: var(--gold-color);
+}
+
+.cinzel {
+  font-family: var(--font-heading);
+}
+
+.divider {
+  width: 80px;
+  height: 3px;
+  background-color: var(--gold-color);
+  margin: 1rem auto 1.5rem;
+  border-radius: 2px;
+}
+
+.divider.align-left {
+  margin-left: 0;
+}
+
+/* Common Buttons styling */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary {
+  background-color: var(--gold-color);
+  color: #062319;
+}
+
+.btn-primary:hover {
+  background-color: var(--gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+  border-color: var(--gold-color);
+  transform: translateY(-2px);
+}
+
+.btn-donate {
+  background-color: var(--primary-light);
+  color: #fff;
+  border: 1px solid var(--gold-color);
+}
+
+.btn-donate:hover {
+  background-color: var(--primary-color);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+/* Glassmorphism Cards styling */
+.glass-card {
+  background: var(--bg-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--glass-shadow);
+  transition: transform var(--transition-speed) ease, background var(--transition-speed) ease, border var(--transition-speed) ease;
+}
+
+/* Section Title styling */
+.section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title .subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold-color);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  position: relative;
+}
+
+.section-title p {
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Announcement Bar */
+.announcement-bar {
+  background-color: var(--announcement-bg);
+  color: var(--announcement-text);
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1001;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Header & Navigation styling */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(12, 21, 18, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.75rem 0;
+  transition: background-color var(--transition-speed) ease, padding var(--transition-speed) ease;
+}
+
+body.light-theme .main-header {
+  background-color: rgba(249, 250, 248, 0.85);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.logo-icon path {
+  transition: fill var(--transition-speed) ease;
+}
+
+.nav-menu ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0.2rem;
+  position: relative;
+  color: var(--text-secondary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--gold-color);
+  transition: width var(--transition-speed) ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Theme Toggle Button styling */
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gold-color);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  transition: background-color var(--transition-speed) ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+.theme-toggle-btn .sun-icon {
+  display: none;
+  width: 20px;
+  height: 20px;
+}
+
+.theme-toggle-btn .moon-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+body.light-theme .theme-toggle-btn .sun-icon {
+  display: block;
+}
+
+body.light-theme .theme-toggle-btn .moon-icon {
+  display: none;
+}
+
+/* Mobile Devices Menu Button */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.hamburger-menu span {
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-primary);
+  transition: all var(--transition-speed) ease;
+}
+
+/* Mobile Visibility Classes */
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+/* Hero Section styling */
+.hero-section {
+  position: relative;
+  padding: 8rem 0 6rem;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, #0c1b15 100%);
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--border-color);
+}
+
+body.light-theme .hero-section {
+  background: linear-gradient(135deg, #eef5f2 0%, #f4faf7 100%);
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: radial-gradient(var(--gold-color) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  animation: slideUp 0.8s ease forwards;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  animation: slideUp 1s ease forwards;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1.5rem;
+  animation: slideUp 1.2s ease forwards;
+}
+
+/* Hero Quick Prayer Panel styling */
+.hero-prayer-panel {
+  padding: 2rem;
+  background: rgba(18, 33, 28, 0.85);
+  border: 2px solid var(--gold-color);
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  justify-self: end;
+  width: 100%;
+  animation: fadeInRight 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+body.light-theme .hero-prayer-panel {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 15px 35px rgba(18, 94, 70, 0.1);
+}
+
+.prayer-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.prayer-panel-header h3 {
+  font-size: 1.2rem;
+}
+
+.pulse-indicator {
+  width: 12px;
+  height: 12px;
+  background-color: var(--gold-color);
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+}
+
+.pulse-indicator::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: var(--gold-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: pulse 1.8s infinite ease-in-out;
+}
+
+.next-prayer-name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.next-prayer-time {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--gold-color);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.next-prayer-countdown {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  background-color: rgba(212, 175, 55, 0.1);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border-left: 3px solid var(--gold-color);
+}
+
+/* Prayer Times Section styling */
+.prayer-times-section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.prayer-times-wrapper {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 3rem;
+}
+
+.table-container {
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.prayer-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.prayer-table th, 
+.prayer-table td {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.prayer-table th {
+  font-family: var(--font-heading);
+  color: var(--gold-color);
+  font-size: 1.1rem;
+}
+
+.prayer-table td {
+  font-weight: 500;
+}
+
+.prayer-table tr:last-child td {
+  border-bottom: none;
+}
+
+.prayer-table tr.active-prayer-row {
+  background-color: rgba(212, 175, 55, 0.15);
+  border-left: 4px solid var(--gold-color);
+}
+
+.prayer-table tr.active-prayer-row td {
+  color: var(--gold-color);
+  font-weight: 700;
+}
+
+.text-muted {
+  color: var(--text-secondary) !important;
+  opacity: 0.6;
+}
+
+.jummah-info {
+  padding: 2.5rem;
+  display: flex;
+  flex-column: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.jummah-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.jummah-info p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.jummah-details-list {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.jummah-details-list li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.jummah-details-list li:last-child {
+  border-bottom: none;
+}
+
+.jummah-info .subtext {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* About Section styling */
+.about-section {
+  padding: 6rem 0;
+  background-color: rgba(6, 35, 25, 0.3);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+body.light-theme .about-section {
+  background-color: #f1f4f2;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-images {
+  position: relative;
+}
+
+.image-box {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  aspect-ratio: 4/3;
+  position: relative;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, #12211c 100%);
+  box-shadow: var(--glass-shadow);
+}
+
+body.light-theme .image-box {
+  background: linear-gradient(135deg, #d3ded9 0%, #e2e8e5 100%);
+}
+
+.bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.mosque-silhouette {
+  animation: float 4s ease-in-out infinite;
+}
+
+.experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background-color: var(--gold-color);
+  color: #062319;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 3;
+}
+
+.experience-badge .number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  line-height: 1;
+}
+
+.experience-badge .text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.about-content h2 {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.values-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.value-item {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+.value-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.value-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.value-item p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* Services Section styling */
+.services-section {
+  padding: 6rem 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  padding: 2.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  background: var(--bg-surface-hover);
+  border-color: var(--gold-color);
+}
+
+.service-icon-box {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform var(--transition-speed) ease;
+}
+
+.service-card:hover .service-icon-box {
+  transform: scale(1.1);
+  background-color: rgba(212, 175, 55, 0.2);
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.service-link {
+  color: var(--gold-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.service-link:hover {
+  letter-spacing: 0.5px;
+}
+
+/* Hadith Section styling */
+.hadith-section {
+  position: relative;
+  padding: 8rem 0;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hadith-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(rgba(212, 175, 55, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.hadith-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.arabic-bismillah {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  display: block;
+  margin-bottom: 1.5rem;
+  color: var(--gold-color);
+  letter-spacing: 2px;
+}
+
+.hadith-text {
+  font-size: 1.6rem;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.hadith-reference {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold-color);
+}
+
+/* Donations Section styling */
+.donations-section {
+  padding: 6rem 0;
+}
+
+.donation-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 3.5rem;
+}
+
+.donation-content h2 {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+}
+
+.donation-content p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.donation-ways {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.way-item {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.way-icon {
+  font-size: 2rem;
+}
+
+.way-item strong {
+  font-size: 1.1rem;
+  display: block;
+}
+
+.way-item p {
+  margin-bottom: 0;
+  font-family: monospace;
+  font-size: 1rem;
+  color: var(--gold-color);
+}
+
+.donation-box {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+body.light-theme .donation-box {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.donation-box h3 {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.donation-amounts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+}
+
+.amount-btn {
+  background-color: transparent;
+  border: 1.5px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.6rem 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-speed) ease;
+}
+
+.amount-btn:hover {
+  border-color: var(--gold-color);
+  background-color: rgba(212, 175, 55, 0.05);
+}
+
+.amount-btn.active {
+  background-color: var(--gold-color);
+  border-color: var(--gold-color);
+  color: #062319;
+}
+
+.custom-amount-input {
+  position: relative;
+}
+
+.currency-label {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 700;
+  color: var(--gold-color);
+}
+
+.custom-amount-input input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text-primary);
+  font-weight: 600;
+  outline: none;
+}
+
+.custom-amount-input input:focus {
+  border-color: var(--gold-color);
+}
+
+.donation-form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.donation-form-inputs input {
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.donation-form-inputs input:focus {
+  border-color: var(--gold-color);
+}
+
+.donation-subtext {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Contact Section styling */
+.contact-section {
+  padding: 6rem 0;
+  background-color: rgba(6, 35, 25, 0.3);
+  border-top: 1px solid var(--border-color);
+}
+
+body.light-theme .contact-section {
+  background-color: #f1f4f2;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.contact-info-panel {
+  padding: 2.5rem;
+}
+
+.contact-info-panel h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info-panel > p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-details li {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+.detail-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.contact-details strong {
+  display: block;
+}
+
+.contact-details p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.map-placeholder {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1.5px solid var(--border-color);
+}
+
+.simulated-map {
+  background-color: rgba(255, 255, 255, 0.03);
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+body.light-theme .simulated-map {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.map-marker {
+  font-size: 2rem;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.simulated-map p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Contact Form Panel styling */
+.contact-form-panel {
+  padding: 3rem;
+}
+
+.contact-form-panel h3 {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text-primary);
+  font-family: inherit;
+  outline: none;
+  transition: border-color var(--transition-speed) ease;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group select option {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold-color);
+}
+
+.form-feedback {
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.form-feedback.success {
+  background-color: rgba(22, 91, 69, 0.2);
+  color: #72e0bd;
+  border: 1px solid #165b45;
+}
+
+.form-feedback.error {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid #dc2626;
+}
+
+/* Footer Section styling */
+.main-footer {
+  background-color: var(--primary-dark);
+  color: var(--text-primary);
+  border-top: 2px solid var(--border-color);
+  padding: 5rem 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.footer-grid h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.footer-grid h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  color: var(--gold-color);
+}
+
+.footer-col-about p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.footer-col-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-col-links a {
+  color: var(--text-secondary);
+}
+
+.footer-col-links a:hover {
+  color: var(--gold-color);
+  padding-left: 5px;
+}
+
+.footer-col-hours ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.footer-col-hours strong {
+  color: var(--text-primary);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Animations Setup
+   ========================================================================== */
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(212, 175, 55, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-fade-in-delay {
+  opacity: 0;
+  animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+}
+
+/* ==========================================================================
+   Responsive Queries (Media Queries)
+   ========================================================================== */
+
+/* Mobile & Tablet Styles (Max-width: 992px) */
+@media screen and (max-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .hero-prayer-panel {
+    justify-self: center;
+  }
+
+  .prayer-times-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .about-images {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .donation-wrapper {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 2rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* Mobile Specific (Max-width: 768px) */
+@media screen and (max-width: 768px) {
+  /* Announcement bar */
+  .announcement-bar {
+    font-size: 0.8rem;
+  }
+
+  /* Hamburger Navigation */
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .hamburger-menu.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -7px);
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 98px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 98px);
+    background-color: var(--bg-base);
+    transition: left var(--transition-speed) ease;
+    z-index: 999;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .nav-menu.open {
+    left: 0;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+  }
+
+  /* Hero adjustments */
+  .hero-section {
+    padding: 6rem 0 4rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Prayer timings table padding adjustments */
+  .prayer-table th, 
+  .prayer-table td {
+    padding: 1rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* Section Title */
+  .section-title h2 {
+    font-size: 2rem;
+  }
+
+  /* Button display modes */
+  .mobile-only {
+    display: flex;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}
+
+/* About Mosque Image Styling */
+.about-mosque-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 2;
+  transition: transform var(--transition-speed) ease;
+}
+
+.image-box:hover .about-mosque-img {
+  transform: scale(1.05);
+}

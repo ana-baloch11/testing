@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to Masjid Al-Noor - A sanctuary of worship, education, and community services. Find daily prayer timings, Islamic lessons, and charity programs.">
+  <meta name="keywords" content="Masjid, Mosque, Prayer Times, Namaz Timings, Islamic Center, Quran Academy, Community Services, Donation">
+  <meta name="author" content="Masjid Al-Noor">
+  <title>Masjid Al-Noor - Islamic Community Center & Mosque</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Style stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <p>✨ Support our Masjid: Join us for the Friday Sermon at 1:30 PM. 🕌</p>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="main-header">
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <svg class="logo-icon" width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" stroke="var(--gold-color)" stroke-width="4"/>
+          <path d="M50 15C50 15 25 35 25 60C25 73.8 36.2 85 50 85C63.8 85 75 73.8 75 60C75 35 50 15 50 15ZM50 25C54.1 33.1 63 45.4 63 60C63 67.2 57.2 73 50 73C42.8 73 37 67.2 37 60C37 45.4 45.9 33.1 50 25Z" fill="var(--gold-color)"/>
+          <path d="M47 38L50 32L53 38H47Z" fill="var(--gold-color)"/>
+        </svg>
+        <span class="logo-text">Masjid <span class="gold-text">Al-Noor</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul>
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#prayer-times" class="nav-link">Prayer Times</a></li>
+          <li><a href="#about" class="nav-link">About Us</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#hadith" class="nav-link">Daily Hadith</a></li>
+          <li><a href="#donations" class="btn btn-donate mobile-only">Donate Now</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+          <svg class="sun-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          <svg class="moon-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+        </button>
+        <a href="#donations" class="btn btn-donate desktop-only">Donate Now</a>
+        <button class="hamburger-menu" id="hamburger" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-bg-overlay"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title animate-fade-in">
+          Welcome to <br><span class="gold-text cinzel">Masjid Al-Noor</span>
+        </h1>
+        <p class="hero-subtitle animate-fade-in-delay">
+          A spiritual home for prayer, reflection, and community. Supporting our local Islamic community in learning, giving, and spiritual growth.
+        </p>
+        <div class="hero-ctas animate-fade-in-delay">
+          <a href="#prayer-times" class="btn btn-primary">Prayer Timings</a>
+          <a href="#about" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Quick Prayer Panel -->
+      <div class="hero-prayer-panel animate-fade-in-right">
+        <div class="prayer-panel-header">
+          <h3>Upcoming Prayer</h3>
+          <span class="pulse-indicator"></span>
+        </div>
+        <div class="prayer-panel-body">
+          <div class="next-prayer-name" id="nextPrayerName">Loading...</div>
+          <div class="next-prayer-time" id="nextPrayerTime">--:--</div>
+          <div class="next-prayer-countdown" id="nextPrayerCountdown">Calculating time remaining...</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prayer Times Section -->
+  <section id="prayer-times" class="prayer-times-section">
+    <div class="container">
+      <div class="section-title">
+        <span class="subtitle">Daily Namaz Schedule</span>
+        <h2>Prayer Times</h2>
+        <div class="divider"></div>
+        <p>Indeed, prayer has been decreed upon the believers a decree of specified times. [Quran 4:103]</p>
+      </div>
+
+      <div class="prayer-times-wrapper">
+        <div class="table-container glass-card">
+          <table class="prayer-table" id="prayerTable">
+            <thead>
+              <tr>
+                <th>Prayer</th>
+                <th>Adhan (Begins)</th>
+                <th>Iqamah (Congregation)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="row-fajr">
+                <td>Fajr</td>
+                <td class="adhan-time" data-prayer="fajr">04:15 AM</td>
+                <td class="iqamah-time" data-prayer="fajr">04:45 AM</td>
+              </tr>
+              <tr id="row-sunrise">
+                <td>Sunrise</td>
+                <td class="adhan-time text-muted" data-prayer="sunrise">05:45 AM</td>
+                <td class="iqamah-time text-muted">—</td>
+              </tr>
+              <tr id="row-dhuhr">
+                <td>Dhuhr</td>
+                <td class="adhan-time" data-prayer="dhuhr">12:30 PM</td>
+                <td class="iqamah-time" data-prayer="dhuhr">01:30 PM</td>
+              </tr>
+              <tr id="row-asr">
+                <td>Asr</td>
+                <td class="adhan-time" data-prayer="asr">04:45 PM</td>
+                <td class="iqamah-time" data-prayer="asr">05:15 PM</td>
+              </tr>
+              <tr id="row-maghrib">
+                <td>Maghrib</td>
+                <td class="adhan-time" data-prayer="maghrib">07:20 PM</td>
+                <td class="iqamah-time" data-prayer="maghrib">07:25 PM</td>
+              </tr>
+              <tr id="row-isha">
+                <td>Isha</td>
+                <td class="adhan-time" data-prayer="isha">09:00 PM</td>
+                <td class="iqamah-time" data-prayer="isha">09:15 PM</td>
+              </tr>
+              <tr id="row-jummah">
+                <td>Jumu'ah (Friday)</td>
+                <td class="adhan-time" data-prayer="jummah">01:30 PM</td>
+                <td class="iqamah-time" data-prayer="jummah">01:45 PM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="jummah-info glass-card">
+          <div class="info-icon">🕌</div>
+          <h3>Jumu'ah Khutbah Details</h3>
+          <p>Friday Sermon (Khutbah) is held weekly with details below:</p>
+          <ul class="jummah-details-list">
+            <li><strong>Khutbah Starts:</strong> 01:30 PM</li>
+            <li><strong>Iqamah (Prayer):</strong> 01:45 PM</li>
+            <li><strong>Language:</strong> English & Urdu</li>
+            <li><strong>Khateeb:</strong> Imam Hafiz Abdul Rahman</li>
+          </ul>
+          <p class="subtext">* Timings adjust seasonally. Check back regularly or follow announcements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-images">
+          <div class="image-box main-img">
+            <img src="assets/mosque.jpg" alt="Masjid Al-Noor Exterior" class="about-mosque-img">
+          </div>
+          <div class="experience-badge">
+            <span class="number">25+</span>
+            <span class="text">Years of Service</span>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <span class="subtitle">Welcome to Our Center</span>
+          <h2>A Place of Peace and Spiritual Enrichment</h2>
+          <div class="divider align-left"></div>
+          <p>
+            Established in 2001, <strong>Masjid Al-Noor</strong> has been serving as the focal point for Muslims in our local community. We strive to provide a welcoming atmosphere for all who wish to learn about Islam, perform daily prayers, and participate in community building.
+          </p>
+          <p>
+            Our core mission is to foster spiritual development, maintain Islamic values, and build positive relationships with other faith groups to promote understanding, peace, and harmony.
+          </p>
+          
+          <div class="values-list">
+            <div class="value-item">
+              <div class="value-icon">🤝</div>
+              <div>
+                <h4>Community & Unity</h4>
+                <p>Supporting all members of the community with regular outreach.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">📖</div>
+              <div>
+                <h4>Authentic Education</h4>
+                <p>Authentic Islamic knowledge, Quran academies for kids and adults.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <div class="section-title">
+        <span class="subtitle">What We Offer</span>
+        <h2>Mosque Services</h2>
+        <div class="divider"></div>
+        <p>Offering religious, educational, and social services to support the spiritual and daily needs of our congregation.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service Card 1 -->
+        <div class="service-card glass-card">
+          <div class="service-icon-box">
+            <!-- Quran Book SVG -->
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 21C16.4183 21 20 17.4183 20 13V5C20 4.44772 19.5523 4 19 4H15.5C14.1193 4 13 5.11929 13 6.5C13 7.88071 14.1193 9 15.5 9H19" stroke="var(--gold-color)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 21C7.58172 21 4 17.4183 4 13V5C4 4.44772 4.44772 4 5 4H8.5C9.88071 4 11 5.11929 11 6.5C11 7.88071 9.88071 9 8.5 9H4" stroke="var(--gold-color)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 4V21" stroke="var(--gold-color)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Quran Academy</h3>
+          <p>Daily classes for children and adults to learn Tajweed, memorization (Hifz), and the understanding of the Holy Quran.</p>
+          <a href="#contact" class="service-link">Enroll Today →</a>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="service-card glass-card">
+          <div class="service-icon-box">
+            <!-- Marriage/Nikah Hearts SVG -->
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 7.69431C10 2.99996 3 3.49996 3 9.49996C3 14.5 9 19.5 12 21C15 19.5 21 14.5 21 9.49996C21 3.49996 14 2.99996 12 7.69431Z" stroke="var(--gold-color)" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Nikah (Marriage) Services</h3>
+          <p>Conducting Islamic marriage ceremonies (Nikah) with proper registration, pre-marriage guidance, and counseling.</p>
+          <a href="#contact" class="service-link">Book Service →</a>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="service-card glass-card">
+          <div class="service-icon-box">
+            <!-- Hands Helping/Charity SVG -->
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="var(--gold-color)" stroke-width="2"/>
+              <path d="M12 6V18M8 10H16M10 14H14" stroke="var(--gold-color)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Charity & Zakat</h3>
+          <p>Collecting and distributing charity (Sadaqah) and Zakat to local families in need, ensuring absolute transparency.</p>
+          <a href="#donations" class="service-link">Donate Zakat →</a>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="service-card glass-card">
+          <div class="service-icon-box">
+            <!-- Community/Users SVG -->
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="var(--gold-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="9" cy="7" r="4" stroke="var(--gold-color)" stroke-width="2"/>
+              <path d="M23 21V19C22.9993 18.1137 22.6944 17.2541 22.1351 16.5651C21.5757 15.8761 20.7969 15.3996 19.92 15.21M16 3.13C16.8844 3.30068 17.6719 3.77443 18.2435 4.47892C18.8152 5.18342 19.1374 6.07455 19.16 7C19.16 7.973 18.82 8.87 18.24 9.58" stroke="var(--gold-color)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Social Counseling</h3>
+          <p>Free, confidential guidance and family counseling based on Islamic principles for couples, youth, and families.</p>
+          <a href="#contact" class="service-link">Consult Now →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hadith / Quranic Quote Section -->
+  <section id="hadith" class="hadith-section">
+    <div class="hadith-overlay"></div>
+    <div class="container text-center">
+      <div class="hadith-card glass-card">
+        <span class="arabic-bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+        <blockquote class="hadith-text">
+          "The best of people are those who are most beneficial to people."
+        </blockquote>
+        <cite class="hadith-reference">— Prophet Muhammad (ﷺ) | Sunan al-Daraqutni</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donations Section -->
+  <section id="donations" class="donations-section">
+    <div class="container">
+      <div class="donation-wrapper glass-card">
+        <div class="donation-content">
+          <span class="subtitle">Invest in Your Akhirah</span>
+          <h2>Support Your Mosque</h2>
+          <div class="divider align-left"></div>
+          <p>
+            Your generous donations help support Masjid Al-Noor’s daily operations, maintenance, educational programs, and community services. Help us build a stronger community, together.
+          </p>
+          <div class="donation-ways">
+            <div class="way-item">
+              <span class="way-icon">💳</span>
+              <div>
+                <strong>Online Bank Transfer</strong>
+                <p>IBAN: PK72 BANK 0123 4567 8901 2345</p>
+              </div>
+            </div>
+            <div class="way-item">
+              <span class="way-icon">📱</span>
+              <div>
+                <strong>EasyPaisa / JazzCash</strong>
+                <p>Account Number: +92 300 1234567</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="donation-box">
+          <h3>Quick Digital Donation</h3>
+          <p>Select an amount or enter custom value:</p>
+          
+          <div class="donation-amounts">
+            <button class="amount-btn active" data-amount="500">₨ 500</button>
+            <button class="amount-btn" data-amount="1000">₨ 1,000</button>
+            <button class="amount-btn" data-amount="5000">₨ 5,000</button>
+            <button class="amount-btn" data-amount="custom">Custom</button>
+          </div>
+
+          <div class="custom-amount-input" id="customAmountWrapper" style="display: none;">
+            <span class="currency-label">₨</span>
+            <input type="number" id="customAmount" placeholder="Enter custom amount" min="100">
+          </div>
+
+          <form id="donationForm" class="donation-form-inputs">
+            <input type="text" placeholder="Full Name (Optional)" id="donorName">
+            <input type="email" placeholder="Email Address (For receipt)" id="donorEmail" required>
+            <button type="submit" class="btn btn-primary btn-block">Proceed to Donate</button>
+          </form>
+          <p class="donation-subtext">🔒 All transactions are secured and encrypted.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Map Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-title">
+        <span class="subtitle">Get In Touch</span>
+        <h2>Contact Us</h2>
+        <div class="divider"></div>
+        <p>If you have any questions, want to enroll in classes, or need counseling services, please contact us.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-panel glass-card">
+          <h3>Contact Information</h3>
+          <p>Feel free to visit us or reach out via phone or email during office hours (9:00 AM - 8:00 PM).</p>
+          
+          <ul class="contact-details">
+            <li>
+              <span class="detail-icon">📍</span>
+              <div>
+                <strong>Our Address</strong>
+                <p>Block 5, Gulshan-e-Iqbal, Karachi, Pakistan</p>
+              </div>
+            </li>
+            <li>
+              <span class="detail-icon">📞</span>
+              <div>
+                <strong>Phone Number</strong>
+                <p>+92 21 3456789</p>
+              </div>
+            </li>
+            <li>
+              <span class="detail-icon">✉️</span>
+              <div>
+                <strong>Email Address</strong>
+                <p>info@masjidalnoor.org</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="map-placeholder">
+            <!-- Simulated Map Visual using CSS styling -->
+            <div class="simulated-map">
+              <span class="map-marker">📍</span>
+              <p>Google Maps Location</p>
+              <a href="https://maps.google.com" target="_blank" class="btn btn-secondary btn-sm">Open in Maps</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-panel glass-card">
+          <h3>Send Us a Message</h3>
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" required placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" required placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" required>
+                <option value="" disabled selected>Select a subject</option>
+                <option value="academy">Quran Academy Enrollment</option>
+                <option value="counseling">Counseling Service</option>
+                <option value="nikah">Nikah/Marriage Service</option>
+                <option value="donation">Donation Inquiry</option>
+                <option value="other">General Inquiry</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" required placeholder="How can we help you?"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+            <div id="formFeedback" class="form-feedback"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-col-about">
+        <h3>Masjid Al-Noor</h3>
+        <p>A sanctuary of prayer, spiritual enrichment, and education for the whole family. Dedicated to serving our community according to the Quran and Sunnah.</p>
+      </div>
+      <div class="footer-col-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#prayer-times">Prayer Times</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#donations">Donation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col-hours">
+        <h4>Weekly Programs</h4>
+        <ul>
+          <li><strong>Sunday School:</strong> 10:00 AM - 1:00 PM</li>
+          <li><strong>Halaqah (Lecture):</strong> Every Saturday after Maghrib</li>
+          <li><strong>Tajweed Class:</strong> Mon & Wed after Isha</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      <p>&copy; 2026 Masjid Al-Noor. All Rights Reserved. Designed for the community.</p>
+    </div>
+  </footer>
+
+  <!-- Script JS -->
+  <script src="script.js"></script>
+</body>
+</html>
