@@ -1,7 +1,7 @@
 // safepay.js – Safepay checkout integration
 // NOTE: Your Safepay merchant/public ID is the same as the secret key you provided.
 // Replace the value below if you ever receive a distinct public merchant ID.
-const SAFEPAY_MERCHANT_ID = 'sec_76e634fd-2a7e-44f5-8646-f8b8cefe1bc5';
+const SAFEPAY_MERCHANT_ID = 'sec_0a0f630c-ea2c-47dd-be68-030dccfc3ae8';
 
 // You can customize these URLs, or leave them as defaults pointing to the same site.
 const SAFEPAY_RETURN_URL = 'https://testing-d4kwlxvwp-ana-baloch11s-projects.vercel.app/thankyou.html';

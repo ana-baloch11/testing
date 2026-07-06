@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Cancelled – Masjid Al-Noor</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .cancel-section {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    .cancel-card {
+      max-width: 560px;
+      padding: 3rem 2.5rem;
+      border-radius: 20px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--glass-shadow);
+      backdrop-filter: blur(12px);
+    }
+    .cancel-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      animation: shake 0.5s ease;
+    }
+    .cancel-card h1 {
+      font-family: var(--font-heading);
+      color: var(--gold-color);
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .cancel-card p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .cancel-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cancel-btns a {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-retry {
+      background: var(--gold-color);
+      color: var(--primary-dark);
+    }
+    .btn-retry:hover {
+      background: var(--gold-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+    }
+    .btn-back {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+    }
+    .btn-back:hover {
+      border-color: var(--gold-color);
+      color: var(--gold-color);
+      transform: translateY(-2px);
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-5px); }
+      80% { transform: translateX(5px); }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <svg class="logo-icon" width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" stroke="var(--gold-color)" stroke-width="4"/>
+          <path d="M50 15C50 15 25 35 25 60C25 73.8 36.2 85 50 85C63.8 85 75 73.8 75 60C75 35 50 15 50 15ZM50 25C54.1 33.1 63 45.4 63 60C63 67.2 57.2 73 50 73C42.8 73 37 67.2 37 60C37 45.4 45.9 33.1 50 25Z" fill="var(--gold-color)"/>
+          <path d="M47 38L50 32L53 38H47Z" fill="var(--gold-color)"/>
+        </svg>
+        <span class="logo-text">Masjid <span class="gold-text">Al-Noor</span></span>
+      </a>
+    </div>
+  </header>
+
+  <section class="cancel-section">
+    <div class="cancel-card">
+      <div class="cancel-icon">🚫</div>
+      <h1>Payment Cancelled</h1>
+      <p>
+        Your donation was not completed. No amount has been charged. 
+        If this was a mistake, you can try again below.
+      </p>
+      <p style="font-size: 0.9rem; opacity: 0.7;">
+        "Whoever is charitable with good, it shall be increased for him." — Quran 2:245
+      </p>
+      <div class="cancel-btns">
+        <a href="donate.html" class="btn-retry">Try Again</a>
+        <a href="index.html" class="btn-back">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="footer-bottom text-center">
+      <p>&copy; 2026 Masjid Al-Noor. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

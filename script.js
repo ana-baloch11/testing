@@ -173,19 +173,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = donationForm.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Processing Secure Payment... 🔒';
+    submitBtn.textContent = 'Redirecting to Safepay... 🔒';
+
+    // Build Safepay checkout URL and redirect
+    const params = new URLSearchParams({
+      merchant_id: SAFEPAY_MERCHANT_ID,
+      order_id: `donation-${Date.now()}`,
+      amount: finalAmount.toString(),
+      currency: 'PKR',
+      return_url: SAFEPAY_RETURN_URL,
+      cancel_url: SAFEPAY_CANCEL_URL,
+    });
+    if (donorName && donorName !== 'Anonymous') params.set('customer_name', donorName);
+    if (donorEmail) params.set('customer_email', donorEmail);
 
     setTimeout(() => {
-      alert(`JazakAllah Khair, ${donorName}! Your mock donation of ₨ ${finalAmount} was initiated successfully. A receipt will be sent to ${donorEmail}.`);
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalText;
-      donationForm.reset();
-      // Reset custom input state
-      customAmountWrapper.style.display = 'none';
-      amountBtns.forEach(b => b.classList.remove('active'));
-      amountBtns[0].classList.add('active');
-      selectedAmount = '500';
-    }, 2000);
+      window.location.href = `https://checkout.safepay.pk/pay?${params.toString()}`;
+    }, 800);
   });
 
 
