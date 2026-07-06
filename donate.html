@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Donate – Mosque Project</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="safepay.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo">🕌 Mosque</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="donate.html" class="active">Donate</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="donate-section">
+      <h1>Support Our Mosque</h1>
+      <p class="donate-intro">Your generous contribution helps us maintain the facilities, fund community programs, and keep the mosque open for everyone.</p>
+
+      <form id="donate-form" class="donate-form">
+        <label for="donation-amount">Donation amount (PKR)</label>
+        <input type="number" id="donation-amount" name="amount" min="10" step="10" placeholder="e.g. 500" required />
+
+        <label for="donor-name">Your name (optional)</label>
+        <input type="text" id="donor-name" name="name" placeholder="John Doe" />
+
+        <label for="donor-email">Email (optional, for receipt)</label>
+        <input type="email" id="donor-email" name="email" placeholder="you@email.com" />
+
+        <button type="submit" class="btn-primary">Proceed to Safepay</button>
+      </form>
+
+      <div id="donate-error" class="error-message"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Mosque Project – All Rights Reserved</p>
+  </footer>
+</body>
+</html>
